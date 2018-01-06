@@ -93,7 +93,41 @@ public class SSComTest {
         //max price 10 to be added
         WebElement maxPriceInput = driver.findElement(By.id("f_o_8_max"));
         maxPriceInput.clear();
-        maxPriceInput.sendKeys("10");
+        maxPriceInput.sendKeys("100");
+
+        WebElement minPriceInput = driver.findElement(By.id ("f_o_8_min"));
+        minPriceInput.clear();
+        minPriceInput.sendKeys("50");
+
+        Select RoomsFilterMin = new Select(driver.findElement(By.id("f_o_1")));
+        RoomsFilterMin.selectByIndex(1);
+
+        Select RoomsFilterMax = new Select(driver.findElement(By.name("topt[1][max]")));
+        RoomsFilterMax.selectByIndex(5);
+
+        WebElement minSizeInput = driver.findElement(By.id ("f_o_3_min"));
+        minSizeInput.clear();
+        minSizeInput.sendKeys("27");
+
+
+        WebElement maxSizeInput = driver.findElement(By.id ("f_o_3_max"));
+        maxSizeInput.clear();
+        maxSizeInput.sendKeys("70");
+
+
+        WebElement minFloorInput = driver.findElement(By.id ("f_o_4_min"));
+        minFloorInput.clear();
+        minFloorInput.sendKeys("3");
+
+
+        WebElement maxFloorInput = driver.findElement(By.id ("f_o_4_max"));
+        maxFloorInput.clear();
+        maxFloorInput.sendKeys("5");
+
+
+        Select SerijaFilter = new Select(driver.findElement(By.id("f_o_6")));
+        SerijaFilter.selectByIndex(8);
+
 
         //click search button
         WebElement searchButton = driver.findElement(By.cssSelector("#filter_tbl > tbody > tr > td:nth-child(2) > input"));
@@ -103,7 +137,7 @@ public class SSComTest {
 
         //check that only 1 is found
         List<WebElement> searchResults = driver.findElements(By.cssSelector("#filter_frm table:nth-child(3) tr input[type='checkbox']"));
-        assertEquals(searchResults.size(),1,"More that 1 was found");
+        assertEquals(searchResults.size(),2,"More than 2 were found");
         
 
 
