@@ -32,7 +32,7 @@ public class BaseTest  {
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void openMainPage(){
+    public void openMainPage() throws InterruptedException {
         //Open ss.com page
         //driver.get("https://www.ss.com/");
         mainPage = new MainPage(driver);
