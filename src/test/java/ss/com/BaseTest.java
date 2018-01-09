@@ -22,7 +22,7 @@ public class BaseTest  {
     public void setUp()
     {
         //Open chrome browser
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+       // System.setProperty("webdriver.chrome.driver", "chromedriver");
         driver = new ChromeDriver();
 
         //Maximize window
